@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Head from 'next/head'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -28,7 +29,6 @@ import day22 from '../assets/inktober-2025/day-22-freehand-pumpkin-pie.png'
 import day23 from '../assets/inktober-2025/day-23-clock.gif'
 import day24 from '../assets/inktober-2025/day-24-loading.gif'
 import day25 from '../assets/inktober-2025/day-25-all-helmets.gif'
-import day25_64 from '../assets/inktober-2025/day-25-all-helmets-64.gif'
 import day26 from '../assets/inktober-2025/day-26-sugar-skull.png'
 import day27 from '../assets/inktober-2025/day-27-whirligig.png'
 import day28 from '../assets/inktober-2025/day-28-nice.gif'
@@ -40,6 +40,9 @@ export default function Inktober2025() {
     return (
         <div className="container">
             <Header />
+            <Head>
+                <meta property="og:image" content="/day-31-homer.png" />
+            </Head>
             <main>
                 <h1>Inktober 2025</h1>
                 <p>In October of 2025, I participated in a slightly modified version of Inktober where I created a new piece of pixel art for every day in the month.

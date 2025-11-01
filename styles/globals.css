@@ -39,6 +39,14 @@ main {
   filter: drop-shadow(2px 4px 6px #333);
 }
 
+@media (max-width: 768px) {
+  main {
+    max-width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+}
+
 code {
   background: #fafafa;
   border-radius: 5px;

@@ -274,7 +274,7 @@ export default function Inktober2025() {
                             <td className="image-cell"><Image src={day31} unoptimized alt="Inktober 2025 Day 31" /></td>
                             <td>64 x 128</td>
                             <td>Full RGB color</td>
-                            <td>Homer Simpsons. Created via reference tracing. Background freehand.</td>
+                            <td>Homer Simpson. Created via reference tracing. Background freehand.</td>
                         </tr>
                     </tbody>
                 </table>

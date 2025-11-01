@@ -133,7 +133,7 @@ export default function Inktober2025() {
             <Head>
                 <meta property="og:title" content="Inktober 2025" />
                 <meta property="og:description" content="The daily images I made during Inktober 2025." />
-                <meta property="og:image" content="/day-31-homer.png" />
+                <meta property="og:image" content="https://seegy.net/day-31-homer.png" />
                 <meta property="og:url" content="https://seegy.net/inktober-2025" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="seegy.net" />

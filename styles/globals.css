@@ -14,7 +14,9 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-block-start: 0.5rem;
   margin-block-end: 0.5rem;
 }
@@ -65,4 +67,29 @@ code {
 
 .left-spacing {
   margin-left: 3rem;
+}
+
+.left-cell {
+  text-align: left;
+  min-width: 100px;
+}
+
+.image-cell {
+  text-align: center;
+}
+
+.image-cell span {
+  display: inline-block !important;
+}
+
+.image-cell img {
+  margin: 0 auto;
+  /* For modern browsers */
+  image-rendering: pixelated;
+
+  /* Fallback for older browsers */
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
 }

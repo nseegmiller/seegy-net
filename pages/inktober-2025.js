@@ -74,7 +74,7 @@ export default function Inktober2025() {
                 }
 
                 /* Mobile Card Layout */
-                @media (max-width: 768px) {
+                @media (max-width: 1200px) {
                     table, thead, tbody, tr, th, td {
                         display: block;
                     }
@@ -124,7 +124,6 @@ export default function Inktober2025() {
 
                     .image-cell :global(img) {
                         border-radius: 8px;
-                        max-height: 300px; /* Limit image height on mobile */
                         object-fit: contain;
                     }
                     }

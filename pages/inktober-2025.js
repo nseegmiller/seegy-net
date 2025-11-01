@@ -39,9 +39,105 @@ import day31 from '../assets/inktober-2025/day-31-homer.png'
 export default function Inktober2025() {
     return (
         <div className="container">
+            <style jsx>{`
+                /* Container styles */
+                .container {
+                    max-width: 1600px;
+                    margin: 0 auto;
+                    padding: 0 1rem;
+                }
+
+                /* Table styles */
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 2rem 0;
+                }
+
+                th, td {
+                    padding: 1rem;
+                    border-bottom: 1px solid #eaeaea;
+                }
+
+                .image-cell {
+                    text-align: center;
+                }
+
+                .image-cell :global(span) {
+                    display: inline-block !important;
+                }
+
+                .image-cell :global(img) {
+                    margin: 0 auto;
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                /* Mobile Card Layout */
+                @media (max-width: 768px) {
+                    table, thead, tbody, tr, th, td {
+                        display: block;
+                    }
+
+                    thead {
+                        display: none; /* Hide headers on mobile */
+                    }
+
+                    tr {
+                        margin-bottom: 2rem;
+                        border: 1px solid #eaeaea;
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        background: #fff;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                    }
+
+                    td {
+                        display: flex;
+                        padding: 0.75rem 0;
+                        border: none;
+                        align-items: flex-start;
+                        line-height: 1.4;
+                    }
+
+                    td:not(:last-child) {
+                        border-bottom: 1px solid #f5f5f5;
+                    }
+
+                    td:before {
+                        content: attr(data-label);
+                        font-weight: 600;
+                        min-width: 100px;
+                        padding-right: 1rem;
+                        color: #666;
+                    }
+
+                    .image-cell {
+                        display: block;
+                        padding: 1rem 0;
+                        margin: 0.5rem 0;
+                    }
+
+                    .image-cell:before {
+                        display: none;
+                    }
+
+                    .image-cell :global(img) {
+                        border-radius: 8px;
+                        max-height: 300px; /* Limit image height on mobile */
+                        object-fit: contain;
+                    }
+                    }
+                }
+            `}</style>
             <Header />
             <Head>
+                <meta property="og:title" content="Inktober 2025" />
+                <meta property="og:description" content="The daily images I made during Inktober 2025." />
                 <meta property="og:image" content="/day-31-homer.png" />
+                <meta property="og:url" content="https://seegy.net/inktober-2025" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="seegy.net" />
             </Head>
             <main>
                 <h1>Inktober 2025</h1>
@@ -62,222 +158,222 @@ export default function Inktober2025() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td className="image-cell"><Image src={day1} unoptimized alt="Inktober 2025 Day 1" /></td>
-                            <td>32 x 32</td>
-                            <td>Aseprite default</td>
-                            <td>The logo of the company I current work for, Axon. Created via reference tracing.</td>
+                            <td data-label="Day">1</td>
+                            <td className="image-cell" data-label="Image"><Image src={day1} unoptimized alt="Inktober 2025 Day 1" /></td>
+                            <td data-label="Size">32 x 32</td>
+                            <td data-label="Palette">Aseprite default</td>
+                            <td data-label="Description">The logo of the company I current work for, Axon. Created via reference tracing.</td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td className="image-cell"><Image src={day2} unoptimized alt="Inktober 2025 Day 2" /></td>
-                            <td>51 x 61</td>
-                            <td>AAP-64</td>
-                            <td>Hornet from Silksong. Created via reference tracing.</td>
+                            <td data-label="Day">2</td>
+                            <td className="image-cell" data-label="Image"><Image src={day2} unoptimized alt="Inktober 2025 Day 2" /></td>
+                            <td data-label="Size">51 x 61</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Hornet from Silksong. Created via reference tracing.</td>
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td className="image-cell"><Image src={day3} unoptimized alt="Inktober 2025 Day 3" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-Slendor128</td>
-                            <td>Sherma from Silksong. Created via reference tracing.</td>
+                            <td data-label="Day">3</td>
+                            <td className="image-cell" data-label="Image"><Image src={day3} unoptimized alt="Inktober 2025 Day 3" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-Slendor128</td>
+                            <td data-label="Description">Sherma from Silksong. Created via reference tracing.</td>
                         </tr>
                         <tr>
-                            <td>4</td>
-                            <td className="image-cell"><Image src={day4} unoptimized alt="Inktober 2025 Day 4" /></td>
-                            <td>64 x 64</td>
-                            <td>A64</td>
-                            <td>Lace from Silksong. Created via reference tracing.</td>
+                            <td data-label="Day">4</td>
+                            <td className="image-cell" data-label="Image"><Image src={day4} unoptimized alt="Inktober 2025 Day 4" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">A64</td>
+                            <td data-label="Description">Lace from Silksong. Created via reference tracing.</td>
                         </tr>
                         <tr>
-                            <td>5</td>
-                            <td className="image-cell"><Image src={day5} unoptimized alt="Inktober 2025 Day 5" /></td>
-                            <td>32 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Homestar Runner. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">5</td>
+                            <td className="image-cell" data-label="Image"><Image src={day5} unoptimized alt="Inktober 2025 Day 5" /></td>
+                            <td data-label="Size">32 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Homestar Runner. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>6</td>
-                            <td className="image-cell"><Image src={day6} unoptimized alt="Inktober 2025 Day 6" /></td>
-                            <td>39 x 32</td>
-                            <td>AAP-64</td>
-                            <td>Strongbad. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">6</td>
+                            <td className="image-cell" data-label="Image"><Image src={day6} unoptimized alt="Inktober 2025 Day 6" /></td>
+                            <td data-label="Size">39 x 32</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Strongbad. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>7</td>
-                            <td className="image-cell"><Image src={day7} unoptimized alt="Inktober 2025 Day 7" /></td>
-                            <td>64 x 53</td>
-                            <td>AAP-64</td>
-                            <td>Trogdor. Character created via reference tracing. Text freehand.</td>
+                            <td data-label="Day">7</td>
+                            <td className="image-cell" data-label="Image"><Image src={day7} unoptimized alt="Inktober 2025 Day 7" /></td>
+                            <td data-label="Size">64 x 53</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Trogdor. Character created via reference tracing. Text freehand.</td>
                         </tr>
                         <tr>
-                            <td>8</td>
-                            <td className="image-cell"><Image src={day8} unoptimized alt="Inktober 2025 Day 8" /></td>
-                            <td>48 x 64</td>
-                            <td>AAP-Splendor128</td>
-                            <td>Johanna's shield. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">8</td>
+                            <td className="image-cell" data-label="Image"><Image src={day8} unoptimized alt="Inktober 2025 Day 8" /></td>
+                            <td data-label="Size">48 x 64</td>
+                            <td data-label="Palette">AAP-Splendor128</td>
+                            <td data-label="Description">Johanna's shield. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>9</td>
-                            <td className="image-cell"><Image src={day9} unoptimized alt="Inktober 2025 Day 9" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Knight from Hollow Knight. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">9</td>
+                            <td className="image-cell" data-label="Image"><Image src={day9} unoptimized alt="Inktober 2025 Day 9" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Knight from Hollow Knight. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>10</td>
-                            <td className="image-cell"><Image src={day10} unoptimized alt="Inktober 2025 Day 10" /></td>
-                            <td>32 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Shakra from Silksong. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">10</td>
+                            <td className="image-cell" data-label="Image"><Image src={day10} unoptimized alt="Inktober 2025 Day 10" /></td>
+                            <td data-label="Size">32 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Shakra from Silksong. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>11</td>
-                            <td className="image-cell"><Image src={day11} unoptimized alt="Inktober 2025 Day 11" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-Splendor128</td>
-                            <td>Flea from Silksong. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">11</td>
+                            <td className="image-cell" data-label="Image"><Image src={day11} unoptimized alt="Inktober 2025 Day 11" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-Splendor128</td>
+                            <td data-label="Description">Flea from Silksong. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>12</td>
-                            <td className="image-cell"><Image src={day12} unoptimized alt="Inktober 2025 Day 12" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Sly from Hollow Knight. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">12</td>
+                            <td className="image-cell" data-label="Image"><Image src={day12} unoptimized alt="Inktober 2025 Day 12" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Sly from Hollow Knight. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>13</td>
-                            <td className="image-cell"><Image src={day13} unoptimized alt="Inktober 2025 Day 13" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Mr Mushroom from Hollow Knight & Silksong. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">13</td>
+                            <td className="image-cell" data-label="Image"><Image src={day13} unoptimized alt="Inktober 2025 Day 13" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Mr Mushroom from Hollow Knight & Silksong. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>14</td>
-                            <td className="image-cell"><Image src={day14} unoptimized alt="Inktober 2025 Day 14" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Panda. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">14</td>
+                            <td className="image-cell" data-label="Image"><Image src={day14} unoptimized alt="Inktober 2025 Day 14" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Panda. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>15</td>
-                            <td className="image-cell"><Image src={day15} unoptimized alt="Inktober 2025 Day 15" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-Splender128</td>
-                            <td>Baseball, mitt, and ball. Created via reference tracing then recomposited. Background freehand.</td>
+                            <td data-label="Day">15</td>
+                            <td className="image-cell" data-label="Image"><Image src={day15} unoptimized alt="Inktober 2025 Day 15" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-Splender128</td>
+                            <td data-label="Description">Baseball, mitt, and ball. Created via reference tracing then recomposited. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>16</td>
-                            <td className="image-cell"><Image src={day16} unoptimized alt="Inktober 2025 Day 16" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Mariners Logo. Created via reference tracing.</td>
+                            <td data-label="Day">16</td>
+                            <td className="image-cell" data-label="Image"><Image src={day16} unoptimized alt="Inktober 2025 Day 16" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Mariners Logo. Created via reference tracing.</td>
                         </tr>
                         <tr>
-                            <td>17</td>
-                            <td className="image-cell"><Image src={day17} unoptimized alt="Inktober 2025 Day 17" /></td>
-                            <td>32 x 32</td>
-                            <td>AAP-64</td>
-                            <td>Gmail logo. Created via reference tracing with modifications for a basic exploration of dithering.</td>
+                            <td data-label="Day">17</td>
+                            <td className="image-cell" data-label="Image"><Image src={day17} unoptimized alt="Inktober 2025 Day 17" /></td>
+                            <td data-label="Size">32 x 32</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Gmail logo. Created via reference tracing with modifications for a basic exploration of dithering.</td>
                         </tr>
                         <tr>
-                            <td>18</td>
-                            <td className="image-cell"><Image src={day18} unoptimized alt="Inktober 2025 Day 18" /></td>
-                            <td>32 x 32</td>
-                            <td>AAP-64</td>
-                            <td>Crying emoji. Created via reference tracing.</td>
+                            <td data-label="Day">18</td>
+                            <td className="image-cell" data-label="Image"><Image src={day18} unoptimized alt="Inktober 2025 Day 18" /></td>
+                            <td data-label="Size">32 x 32</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Crying emoji. Created via reference tracing.</td>
                         </tr>
                         <tr>
-                            <td>19</td>
-                            <td className="image-cell"><Image src={day19} unoptimized alt="Inktober 2025 Day 19" /></td>
-                            <td>32 x 32</td>
-                            <td>Custom palette from a Link to the Past</td>
-                            <td>Composition for my 43rd birthday made by combining elements from the game.</td>
+                            <td data-label="Day">19</td>
+                            <td className="image-cell" data-label="Image"><Image src={day19} unoptimized alt="Inktober 2025 Day 19" /></td>
+                            <td data-label="Size">32 x 32</td>
+                            <td data-label="Palette">Custom palette from a Link to the Past</td>
+                            <td data-label="Description">Composition for my 43rd birthday made by combining elements from the game.</td>
                         </tr>
                         <tr>
-                            <td>20</td>
-                            <td className="image-cell"><Image src={day20} unoptimized alt="Inktober 2025 Day 20" /></td>
-                            <td>63 x 64</td>
-                            <td>NES</td>
-                            <td>Rainbow animation created freehand to explore dithering and animation.</td>
+                            <td data-label="Day">20</td>
+                            <td className="image-cell" data-label="Image"><Image src={day20} unoptimized alt="Inktober 2025 Day 20" /></td>
+                            <td data-label="Size">63 x 64</td>
+                            <td data-label="Palette">NES</td>
+                            <td data-label="Description">Rainbow animation created freehand to explore dithering and animation.</td>
                         </tr>
                         <tr>
-                            <td>21</td>
-                            <td className="image-cell"><Image src={day21} unoptimized alt="Inktober 2025 Day 21" /></td>
-                            <td>96 x 64</td>
-                            <td>AAP-Splendor128</td>
-                            <td>SNES game controller. Created via reference tracing with modifications for the text.</td>
+                            <td data-label="Day">21</td>
+                            <td className="image-cell" data-label="Image"><Image src={day21} unoptimized alt="Inktober 2025 Day 21" /></td>
+                            <td data-label="Size">96 x 64</td>
+                            <td data-label="Palette">AAP-Splendor128</td>
+                            <td data-label="Description">SNES game controller. Created via reference tracing with modifications for the text.</td>
                         </tr>
                         <tr>
-                            <td>22</td>
-                            <td className="image-cell"><Image src={day22} unoptimized alt="Inktober 2025 Day 22" /></td>
-                            <td>32 x 32</td>
-                            <td>AAP-64</td>
-                            <td>Pumpkin pie. Made entirely freehand.</td>
+                            <td data-label="Day">22</td>
+                            <td className="image-cell" data-label="Image"><Image src={day22} unoptimized alt="Inktober 2025 Day 22" /></td>
+                            <td data-label="Size">32 x 32</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Pumpkin pie. Made entirely freehand.</td>
                         </tr>
                         <tr>
-                            <td>23</td>
-                            <td className="image-cell"><Image src={day23} unoptimized alt="Inktober 2025 Day 23" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Classic alarm clock. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">23</td>
+                            <td className="image-cell" data-label="Image"><Image src={day23} unoptimized alt="Inktober 2025 Day 23" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Classic alarm clock. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>24</td>
-                            <td className="image-cell"><Image src={day24} unoptimized alt="Inktober 2025 Day 24" /></td>
-                            <td>96 x 32</td>
-                            <td>Full RGB color</td>
-                            <td>Loading animation. Created by compositing elements from a Cyangmou HUD asset pack. Text freehand copied from a pixel art font.</td>
+                            <td data-label="Day">24</td>
+                            <td className="image-cell" data-label="Image"><Image src={day24} unoptimized alt="Inktober 2025 Day 24" /></td>
+                            <td data-label="Size">96 x 32</td>
+                            <td data-label="Palette">Full RGB color</td>
+                            <td data-label="Description">Loading animation. Created by compositing elements from a Cyangmou HUD asset pack. Text freehand copied from a pixel art font.</td>
                         </tr>
                         <tr>
-                            <td>25</td>
-                            <td className="image-cell"><Image src={day25} unoptimized alt="Inktober 2025 Day 25" /></td>
-                            <td>64 x 64</td>
-                            <td>Full RGB color</td>
-                            <td>Animation with a set of steampunk helmets. Background is made of color shifted and composited elements from a Cyangmou asset pack.
+                            <td data-label="Day">25</td>
+                            <td className="image-cell" data-label="Image"><Image src={day25} unoptimized alt="Inktober 2025 Day 25" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">Full RGB color</td>
+                            <td data-label="Description">Animation with a set of steampunk helmets. Background is made of color shifted and composited elements from a Cyangmou asset pack.
                                 Helmets from a different Cyangmou asset pack.</td>
                         </tr>
                         <tr>
-                            <td>26</td>
-                            <td className="image-cell"><Image src={day26} unoptimized alt="Inktober 2025 Day 26" /></td>
-                            <td>64 x 64</td>
-                            <td>AAP-64</td>
-                            <td>Sugar skull. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">26</td>
+                            <td className="image-cell" data-label="Image"><Image src={day26} unoptimized alt="Inktober 2025 Day 26" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">AAP-64</td>
+                            <td data-label="Description">Sugar skull. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>27</td>
-                            <td className="image-cell"><Image src={day27} unoptimized alt="Inktober 2025 Day 27" /></td>
-                            <td>64 x 128</td>
-                            <td>AAP-Splendor128</td>
-                            <td>Whirligig from Bloodborne. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">27</td>
+                            <td className="image-cell" data-label="Image"><Image src={day27} unoptimized alt="Inktober 2025 Day 27" /></td>
+                            <td data-label="Size">64 x 128</td>
+                            <td data-label="Palette">AAP-Splendor128</td>
+                            <td data-label="Description">Whirligig from Bloodborne. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>28</td>
-                            <td className="image-cell"><Image src={day28} unoptimized alt="Inktober 2025 Day 28" /></td>
-                            <td>62 x 31</td>
-                            <td>Full RGB color</td>
-                            <td>Neon Nice. Text created via reference tracing. Bricks and outlined were freehand based on a reference image. Small exploration into transparency.</td>
+                            <td data-label="Day">28</td>
+                            <td className="image-cell" data-label="Image"><Image src={day28} unoptimized alt="Inktober 2025 Day 28" /></td>
+                            <td data-label="Size">62 x 31</td>
+                            <td data-label="Palette">Full RGB color</td>
+                            <td data-label="Description">Neon Nice. Text created via reference tracing. Bricks and outlined were freehand based on a reference image. Small exploration into transparency.</td>
                         </tr>
                         <tr>
-                            <td>29</td>
-                            <td className="image-cell"><Image src={day29} unoptimized alt="Inktober 2025 Day 29" /></td>
-                            <td>64 x 64</td>
-                            <td>Full RGB color</td>
-                            <td>Character from the game Peak. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">29</td>
+                            <td className="image-cell" data-label="Image"><Image src={day29} unoptimized alt="Inktober 2025 Day 29" /></td>
+                            <td data-label="Size">64 x 64</td>
+                            <td data-label="Palette">Full RGB color</td>
+                            <td data-label="Description">Character from the game Peak. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>30</td>
-                            <td className="image-cell"><Image src={day30} unoptimized alt="Inktober 2025 Day 30" /></td>
-                            <td>32 x 96</td>
-                            <td>Full RGB color</td>
-                            <td>Godseeker from Hollow Knight. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">30</td>
+                            <td className="image-cell" data-label="Image"><Image src={day30} unoptimized alt="Inktober 2025 Day 30" /></td>
+                            <td data-label="Size">32 x 96</td>
+                            <td data-label="Palette">Full RGB color</td>
+                            <td data-label="Description">Godseeker from Hollow Knight. Created via reference tracing. Background freehand.</td>
                         </tr>
                         <tr>
-                            <td>31</td>
-                            <td className="image-cell"><Image src={day31} unoptimized alt="Inktober 2025 Day 31" /></td>
-                            <td>64 x 128</td>
-                            <td>Full RGB color</td>
-                            <td>Homer Simpson. Created via reference tracing. Background freehand.</td>
+                            <td data-label="Day">31</td>
+                            <td className="image-cell" data-label="Image"><Image src={day31} unoptimized alt="Inktober 2025 Day 31" /></td>
+                            <td data-label="Size">64 x 128</td>
+                            <td data-label="Palette">Full RGB color</td>
+                            <td data-label="Description">Homer Simpson. Created via reference tracing. Background freehand.</td>
                         </tr>
                     </tbody>
                 </table>
